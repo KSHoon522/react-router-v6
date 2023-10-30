@@ -4,6 +4,7 @@ import About from "./screens/About";
 import Home from "./screens/Home";
 import NotFound from "./screens/NotFound";
 import ErrorComponent from "./component/ErrorComponent";
+import User from "./screens/users/User";
 
 const router = createBrowserRouter([
   //Router를 array 형태로 생성하게 해줌
@@ -20,6 +21,11 @@ const router = createBrowserRouter([
       {
         path: "about",
         element: <About />,
+      },
+      {
+        path: "users/:userId", // ./users에 아무것도 보여줄 것이 없으면 이런 식으로 작성
+        //아니라면 users 밑에 children을 추가해줘야함
+        element: <User />,
       },
     ],
     errorElement: <NotFound />, //에러가 발생했거나 컴포넌트를 못 찾을 때 보여줄 element
